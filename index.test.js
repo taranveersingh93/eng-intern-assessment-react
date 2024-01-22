@@ -2,7 +2,11 @@ import {getStopWatchTime} from './src/helperFunctions';
 import {expect, jest, test} from '@jest/globals';
 
 //Run the tests by "npm test"
-//End to end testing done by cypress. To do that, run "npx cypress open", select E2E testing and run the tests.
+//End to end testing done by cypress. To do that, 
+//run "npx cypress open", select E2E testing and run the tests.
+//hit continue when asked to select a config
+//select chrome for the browser when asked and select "start testing"
+//click on "test-spec.cy.js"
 
 describe('Milliseconds', () => {
     test("should show all 0's at start", () => {

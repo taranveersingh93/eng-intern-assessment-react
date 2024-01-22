@@ -10,8 +10,8 @@ const SingleLapRow = ({lap}: SingleLapProp) => {
     return (
         <tr key={lap.lapNumber}>
             <th scope="row">{lap.lapNumber}</th>
-            <td scope="laptime">{getStopWatchTime(lap.lapTime)}</td>
-            <td scope="totaltime">{getStopWatchTime(lap.totalTime)}</td>
+            <td className="laptime">{getStopWatchTime(lap.lapTime)}</td>
+            <td className="totaltime">{getStopWatchTime(lap.totalTime)}</td>
         </tr>
     )
 }
