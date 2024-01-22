@@ -45,6 +45,8 @@ export default function App() {
     const resetTimer = (): void => {
         setTimeRunning(false);
         setTotalTimeInMs(0);
+        setLaps([]);
+        setCurrentLapTimeInMs(0);
     }
 
     const resetLap = (): void => {
