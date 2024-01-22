@@ -8,7 +8,7 @@ type SingleLapProp = {
 
 const SingleLapRow = ({lap}: SingleLapProp) => {
     return (
-        <tr key={lap.lapNumber}>
+        <tr>
             <th scope="row">{lap.lapNumber}</th>
             <td className="laptime">{getStopWatchTime(lap.lapTime)}</td>
             <td className="totaltime">{getStopWatchTime(lap.totalTime)}</td>

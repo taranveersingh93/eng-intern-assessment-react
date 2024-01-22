@@ -9,7 +9,7 @@ type LapsProps = {
 const Laps = ({laps}: LapsProps) => {
     const lapsCode = () => {
         const descendingLaps = laps.sort((a,b) => b.lapNumber - a.lapNumber); //Sort laps from latest to oldest
-        return descendingLaps.map(lap => <SingleLapRow lap={lap} />) //generate table row code for each lap
+        return descendingLaps.map(lap => <SingleLapRow key={lap.lapNumber} lap={lap} />) //generate table row code for each lap
     }
 
     return (

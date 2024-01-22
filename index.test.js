@@ -6,7 +6,7 @@ import {expect, jest, test} from '@jest/globals';
 //run "npx cypress open", select E2E testing and run the tests.
 //hit continue when asked to select a config
 //select chrome for the browser when asked and select "start testing"
-//click on "test-spec.cy.js"
+//click on specs > "test-spec.cy.js"
 
 describe('Milliseconds', () => {
     test("should show all 0's at start", () => {
