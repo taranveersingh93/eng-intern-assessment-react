@@ -13,7 +13,7 @@ const Laps = ({laps}: LapsProps) => {
     }
 
     return (
-        <div className="col-12 col-md-6 col-lg-8">
+        <div className="col-12">
             <table className="table">
                 <thead>
                     <tr>

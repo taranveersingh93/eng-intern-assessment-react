@@ -62,8 +62,8 @@ export default function App() {
     }
 
     return(
-        <section>
-            <div className='d-flex flex-column align-items-center p-5'>
+        <section className='w-100 row d-flex justify-content-center'>
+            <div className='col-12 d-flex flex-column align-items-center p-5'>
                 <StopWatch time={totalTimeInMs} />
                 <Buttons 
                     timeRunning={timeRunning}
