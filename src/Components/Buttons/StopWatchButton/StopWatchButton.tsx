@@ -1,7 +1,22 @@
 import React from 'react'
 
-export default function StopWatchButton() {
-    return(
-        <div></div>
-    )
+type StopWatchButtonProps = {
+    timeRunning: boolean;
+    toggleTimer: () => void;
+}
+
+export default function StopWatchButton({timeRunning, toggleTimer}: StopWatchButtonProps) {
+    if (!timeRunning) {
+        return(
+            <button onClick={() => {toggleTimer()}}>
+                Start
+            </button>
+        )
+    } else {
+        return(
+            <button onClick={() => {toggleTimer()}}>
+                Stop
+            </button>
+        )
+    }
 }

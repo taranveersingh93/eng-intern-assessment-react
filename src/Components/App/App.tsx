@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react'
+import StopWatch from '../StopWatch/StopWatch';
+import Buttons from '../Buttons/Buttons';
 
 export default function App() {
     const [totalTimeInMs, setTotalTimeInMs] = useState<number>(0); //numerical track (ms) of total time lapsed
@@ -27,8 +29,11 @@ export default function App() {
     }
 
     return(
-        <div>
-            
-        </div>
+        <section>
+            <div className='d-flex flex-column align-items-center'>
+                <StopWatch time={totalTimeInMs} />
+                <Buttons timeRunning={timeRunning} toggleTimer={toggleTimer}/>
+            </div>
+        </section>
     )
 }
