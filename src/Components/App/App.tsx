@@ -18,7 +18,17 @@ export default function App() {
         return () => {clearInterval(intervalId)}; //the cleanup function of useEffect. Avoids continues alteration of the time state.
     }, [timeRunning])
 
+    const toggleTimer = (): void => { //Handler function that the stopwatch button will trigger
+        if (timeRunning) {
+            setTimeRunning(false);
+        } else {
+            setTimeRunning(true);
+        }
+    }
+
     return(
-        <div></div>
+        <div>
+            
+        </div>
     )
 }
