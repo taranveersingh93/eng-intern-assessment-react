@@ -8,13 +8,13 @@ type StopWatchButtonProps = {
 export default function StopWatchButton({timeRunning, toggleTimer}: StopWatchButtonProps) {
     if (!timeRunning) {
         return(
-            <button onClick={() => {toggleTimer()}}>
+            <button className='btn btn-success start-btn' onClick={() => {toggleTimer()}}>
                 Start
             </button>
         )
     } else {
         return(
-            <button onClick={() => {toggleTimer()}}>
+            <button className='btn btn-danger stop-btn' onClick={() => {toggleTimer()}}>
                 Stop
             </button>
         )

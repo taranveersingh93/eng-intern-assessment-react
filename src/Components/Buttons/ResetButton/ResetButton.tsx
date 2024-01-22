@@ -6,7 +6,7 @@ type ResetButtonProps = {
 
 const ResetButton = ({resetTimer}: ResetButtonProps) => {
     return (
-        <button onClick={() => {resetTimer()}}>
+        <button className="btn btn-primary ms-3 reset-btn" onClick={() => {resetTimer()}}>
             Reset
         </button>
     )

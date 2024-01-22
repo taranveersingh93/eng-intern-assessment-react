@@ -1,5 +1,6 @@
 import React from 'react'
 import { getStopWatchTime } from '../../helperFunctions';
+import './StopWatch.css'
 
 type StopWatchProps = {
     time: number;

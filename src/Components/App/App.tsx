@@ -3,6 +3,7 @@ import StopWatch from '../StopWatch/StopWatch';
 import Buttons from '../Buttons/Buttons';
 import SingleLap from '../../interfaces';
 import Laps from '../Laps/Laps';
+import './App.css';
 
 export default function App() {
     const [totalTimeInMs, setTotalTimeInMs] = useState<number>(0); //numerical track (ms) of total time lapsed
@@ -62,7 +63,7 @@ export default function App() {
 
     return(
         <section>
-            <div className='d-flex flex-column align-items-center'>
+            <div className='d-flex flex-column align-items-center p-5'>
                 <StopWatch time={totalTimeInMs} />
                 <Buttons 
                     timeRunning={timeRunning}
