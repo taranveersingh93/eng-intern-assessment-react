@@ -73,7 +73,11 @@ export default function App() {
                     resetLap={resetLap}    
                 />
             </div>
-            {laps.length && <div className='row d-flex justify-content-center'> <Laps laps={laps}/> </div>}
+            {laps.length > 0 &&
+                <div className='row d-flex justify-content-center'> 
+                    <Laps laps={laps}/> 
+                </div>
+            }
         </section>
     )
 }
