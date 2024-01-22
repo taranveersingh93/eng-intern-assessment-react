@@ -17,6 +17,7 @@ export default function App() {
         if (timeRunning) {
             intervalId = setInterval(() => {
                 setTotalTimeInMs(currentTime => currentTime + 10);
+                setCurrentLapTimeInMs(currentTime => currentTime + 10);
             }, 10)
         } // if the timer state indicates true, keep resetting the "totalTimeInMS" state to += 10 every 10ms. This way, the time stays in ms
           // I chose to go with increments of 10 because I intend to display just 2 digits in milliseconds. Any increment less than 10
