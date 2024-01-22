@@ -5,6 +5,7 @@ import Buttons from '../Buttons/Buttons';
 export default function App() {
     const [totalTimeInMs, setTotalTimeInMs] = useState<number>(0); //numerical track (ms) of total time lapsed
     const [timeRunning, setTimeRunning] = useState<boolean>(false); //boolean indicator of whether timer is running or not
+    const [timeCounted, setTimeCounted] = useState<boolean>(false); //boolean to indicate a non 0 total time val
 
     useEffect(() => {
         let intervalId: any; //Need to store this to clear up the setInterval function.
@@ -20,6 +21,14 @@ export default function App() {
         return () => {clearInterval(intervalId)}; //the cleanup function of useEffect. Avoids continues alteration of the time state.
     }, [timeRunning])
 
+    useEffect(() => {
+        if (totalTimeInMs) { // if totalTime is non 0, time counted will be marked true
+            setTimeCounted(true);
+        } else {
+            setTimeCounted(false);
+        }
+    }, [totalTimeInMs])
+
     const toggleTimer = (): void => { //Handler function that the stopwatch button will trigger
         if (timeRunning) {
             setTimeRunning(false);
@@ -28,11 +37,16 @@ export default function App() {
         }
     }
 
+    const resetTimer = (): void => {
+        setTimeRunning(false);
+        setTotalTimeInMs(0);
+    }
+
     return(
         <section>
             <div className='d-flex flex-column align-items-center'>
                 <StopWatch time={totalTimeInMs} />
-                <Buttons timeRunning={timeRunning} toggleTimer={toggleTimer}/>
+                <Buttons timeRunning={timeRunning} toggleTimer={toggleTimer} resetTimer={resetTimer} timeCounted={timeCounted}/>
             </div>
         </section>
     )
