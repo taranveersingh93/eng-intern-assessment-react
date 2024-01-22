@@ -1,4 +1,5 @@
 import React from 'react'
+import { getStopWatchTime } from '../../helperFunctions';
 
 type StopWatchProps = {
     time: number;
@@ -6,8 +7,8 @@ type StopWatchProps = {
 
 export default function StopWatch({time}: StopWatchProps) {
     return(
-        <div>
-            {time}
+        <div className='p-4 stopwatch'>
+            {getStopWatchTime(time)}
         </div>
     )
 }

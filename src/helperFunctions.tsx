@@ -8,11 +8,11 @@ const getStopWatchTime = (time : number): string => {
     //divided by 1000. So milliseconds will always represent the "spillover" ms after the seconds have been completed.
     //The padstart decides how many digits I want to show (3) and the second param is for what I want to show if there are no 
     //digits filling in those spots.
-    const millisecondsString: string = String(milliseconds % 1000).padStart(3, "0");
-    const secondsString: string = String(seconds % 60).padStart(2, "0");
-    const minutesString: string = String(minutes % 60).padStart(2, "0");
+    const millisecondsString: string = String(milliseconds%1000).padStart(3, "0").slice(0, -1);
+    const secondsString: string = String(seconds%60).padStart(2, "0");
+    const minutesString: string = String(minutes%60).padStart(2, "0");
     const hoursString: string = String(hours).padStart(2,"0");
-    return `${hoursString}:${minutesString}:${secondsString}:${milliseconds}`;
+    return `${hoursString}:${minutesString}:${secondsString}:${millisecondsString}`;
 }
 
 export {getStopWatchTime};
