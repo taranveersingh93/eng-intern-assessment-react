@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import StopWatch from '../StopWatch/StopWatch';
 import Buttons from '../Buttons/Buttons';
 import SingleLap from '../../interfaces';
+import Laps from '../Laps/Laps';
 
 export default function App() {
     const [totalTimeInMs, setTotalTimeInMs] = useState<number>(0); //numerical track (ms) of total time lapsed
@@ -68,6 +69,7 @@ export default function App() {
                     resetLap={resetLap}    
                 />
             </div>
+            {laps.length && <div className='row d-flex justify-content-center'> <Laps laps={laps}/> </div>}
         </section>
     )
 }
