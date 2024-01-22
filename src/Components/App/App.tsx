@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import StopWatch from '../StopWatch/StopWatch';
 import Buttons from '../Buttons/Buttons';
+import SingleLap from '../../interfaces';
 
 export default function App() {
     const [totalTimeInMs, setTotalTimeInMs] = useState<number>(0); //numerical track (ms) of total time lapsed
     const [timeRunning, setTimeRunning] = useState<boolean>(false); //boolean indicator of whether timer is running or not
     const [timeCounted, setTimeCounted] = useState<boolean>(false); //boolean to indicate a non 0 total time val
+    const [laps, setLaps] = useState<SingleLap[]>([]); //Array of all laps
+    const [currentLapTimeInMs, setCurrentLapTimeInMs] = useState<number>(0); //Running lap's time - separate from total time
 
     useEffect(() => {
         let intervalId: any; //Need to store this to clear up the setInterval function.
@@ -43,7 +46,14 @@ export default function App() {
     }
 
     const resetLap = (): void => {
-        
+        const currentLap: SingleLap = {
+            lapNumber: laps.length + 1, //The first lap would be added when array length would be 0 - and so on
+            lapTime: currentLapTimeInMs,
+            totalTime: totalTimeInMs
+        };
+        setCurrentLapTimeInMs(0); //Reset lap time so it can start again
+        setLaps([...laps, currentLap]); //destructure or spread out all existing elements of laps and
+                                        // add/append the current lap at the end. Finally pack them back into an array
     }
 
     return(
