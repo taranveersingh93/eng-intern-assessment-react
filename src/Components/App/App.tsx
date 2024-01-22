@@ -42,11 +42,21 @@ export default function App() {
         setTotalTimeInMs(0);
     }
 
+    const resetLap = (): void => {
+        
+    }
+
     return(
         <section>
             <div className='d-flex flex-column align-items-center'>
                 <StopWatch time={totalTimeInMs} />
-                <Buttons timeRunning={timeRunning} toggleTimer={toggleTimer} resetTimer={resetTimer} timeCounted={timeCounted}/>
+                <Buttons 
+                    timeRunning={timeRunning}
+                    toggleTimer={toggleTimer}
+                    resetTimer={resetTimer}
+                    timeCounted={timeCounted}
+                    resetLap={resetLap}    
+                />
             </div>
         </section>
     )
